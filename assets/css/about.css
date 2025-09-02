@@ -30,7 +30,6 @@ main {
 .about-content {
   padding: 28px 70px;
   line-height: 21px;
-  text-align: justify;
   font-size: 15px;
   width: 785px;
 }
@@ -147,5 +146,6 @@ main {
   display: flex;
   margin-top: 25px;
 }
+
 
 }

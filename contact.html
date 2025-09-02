@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Emanuele Passilongo Portfolio 2025</title>
+  <link rel="icon" href="assets/images/STAR_RED.png" type="image/x-icon" />
+  <link rel="stylesheet" href="assets/css/common.css">
+  <link rel="stylesheet" href="assets/css/contact.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="navbar-left">
+      <a href="index.html">Emanuele Passilongo &#169; 2025</a>
+      <a href="index.html#sezione2">Works</a>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="index.html#sezione2">Works</a>
+    <a href="about.html" class="divider">About</a>
+    <a href="contact.html" class="touch">Get in touch</a>
+    <div class="menu-icons">
+      <a href="#"><img src="assets/images/INSTA.png" alt="Instagram"></a>
+      <a href="#"><img src="assets/images/LINKEDIN.png" alt="LinkedIn"></a>
+      <a href="#"><img src="assets/images/MAIL.png" alt="Email"></a>
+      <a href="#"><img src="assets/images/PINTEREST.png" alt="Pinterest"></a>
+    </div>
+  </div>
+
+  <main>
+    <section class="contact-section">
+      <h1 class="title">Get in touch</h1>
+      <p class="email">
+        <a href="mailto:emanuelepassilongo.ep@gmail.com" class="white">emanuelepassilongo.ep@gmail.com</a>
+      </p>
+    </section>
+
+    <section class="follow-section">
+      <h2>Follow</h2>
+      <p class="follow"><a href="#">Instagram</a></p>
+      <p class="follow"><a href="#">Linkedin</a></p>
+      <p class="follow"><a href="#">Pinterest</a></p>
+    </section>
+
+    <div class="icone menu-icons">
+      <a href="https://www.linkedin.com" target="_blank">
+        <img src="assets/images/LINKEDIN.png" alt="LinkedIn icon">
+      </a>
+      <a href="https://www.instagram.com" target="_blank">
+        <img src="assets/images/INSTA.png" alt="Instagram icon">
+      </a>
+      <a href="https://www.pinterest.com" target="_blank">
+        <img src="assets/images/PINTEREST.png" alt="Pinterest icon">
+      </a>
+      <a href="mailto:emanuelepassilongo.ep@gmail.com">
+        <img src="assets/images/MAIL.png" alt="Email icon">
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-left">
+      <div>Emanuele Passilongo</div>
+      <div>Portfolio © 2025</div>
+    </div>
+
+    <div class="footer-center">
+      <a href="mailto:emanuelepassilongo.ep@gmail.com">emanuelepassilongo.ep@gmail.com</a>
+    </div>
+
+      <div class="footer-right">
+        <a class="back-link" href="#top" aria-label="Back to top">
+          <span class="back-text">Back to top</span>
+          <svg
+            class="back-arrow"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 19V5M5 12l7-7 7 7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+      </div>
+    </footer>
+
+  <script>
+    let lastScrollTop = 0;
+    
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('show');
+    }
+    
+    // Hide menu when scrolling down
+    window.addEventListener('scroll', function() {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      if (document.getElementById('mobileMenu').classList.contains('show') && scrollTop > lastScrollTop) {
+        document.getElementById('mobileMenu').classList.remove('show');
+      }
+      
+      lastScrollTop = scrollTop;
+    });
+
+    // Handle social icons hover with stable behavior
+    document.querySelectorAll('.menu-icons a').forEach(link => {
+      const img = link.querySelector('img');
+      if (!img) return;
+      
+      const originalSrc = img.getAttribute('src');
+      const hoverSrc = originalSrc.replace(/(\.[^.]+)$/, 'BLACK$1');
+
+      link.addEventListener('mouseenter', () => {
+        img.setAttribute('src', hoverSrc);
+      });
+
+      link.addEventListener('mouseleave', () => {
+        img.setAttribute('src', originalSrc);
+      });
+
+      // Touch support for mobile
+      link.addEventListener('touchstart', () => {
+        img.setAttribute('src', hoverSrc);
+      }, {passive: true});
+      
+      link.addEventListener('touchend', () => {
+        setTimeout(() => {
+          img.setAttribute('src', originalSrc);
+        }, 150);
+      }, {passive: true});
+    });
+  </script>
+
+</body>
+</html>

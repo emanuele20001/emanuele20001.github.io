@@ -1,0 +1,177 @@
+#sezione2 {
+  scroll-margin-top: 65px;
+}
+
+main {
+  display: flex;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  height: 88vh;
+  padding: 0 15%;
+}
+
+.background-video {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+}
+
+.works-section {
+  background-color: #000;
+}
+
+.works2 {
+  color: white;
+  font-size: 4vh;
+  margin-left: 2.5%;
+  margin-top: 30px;
+  margin-bottom: 100px;
+}
+
+/* Works Clickable Boxes */
+.clickable-box {
+  position: relative;
+  width: 96.5%;
+  height: 84px;
+  margin-left: 1.5%;
+  border-top: 1px solid white;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.clickable-box .content {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+  position: relative;
+}
+
+.clickable-box .title {
+  color: white;
+  font-size: 3.6vh;
+  transition: transform 0.5s ease;
+  white-space: nowrap;
+}
+
+.clickable-box .extra-text {
+  color: gray;
+  font-size: 20px;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.clickable-box .extra-text.editor {
+  margin-left: 30px;
+}
+
+.clickable-box .extra-text.number {
+  margin-left: auto;
+}
+
+/* Hover effects for desktop */
+.clickable-box:hover .title {
+  transform: translateX(25px);
+}
+
+.clickable-box:hover .extra-text.editor {
+  opacity: 1;
+  transform: translateX(20px);
+}
+
+.clickable-box:hover .extra-text.number {
+  opacity: 1;
+  transform: translateX(20px);
+}
+
+.new {
+  border-top: 1px solid white;
+  width: 96.5%;
+  margin-left: 1.5%;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+  .works2 {
+    margin-left: 6%;
+    margin-bottom: 55px;
+  }
+  
+  .clickable-box {
+    position: relative;
+    width: 92%;
+    height: 70px;
+    margin-left: 4%;
+    border-top: 1px solid white;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  .clickable-box .content {
+    padding: 0 15px;
+    position: relative;
+  }
+  
+  .clickable-box .title {
+    color: white;
+    font-size: 22px;
+    transition: transform 0.5s ease;
+  }
+  
+  /* Disable hover effects on mobile and add arrow */
+  .clickable-box:hover .title,
+  .clickable-box:hover .extra-text {
+    transform: none;
+    opacity: 1;
+  }
+  
+  .clickable-box .extra-text {
+    display: none;
+  }
+  
+  /* Arrow for mobile */
+  .clickable-box::after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 6px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    z-index: 2;
+  }
+  
+  .clickable-box:hover::before {
+    content: '';
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 18px;
+    background-color: white;
+    border-radius: 4px;
+    z-index: 1;
+  }
+  
+  .clickable-box:hover::after {
+    border-color: black;
+  }
+  
+  .new {
+    border-top: 1px solid white;
+    width: 92%;
+    margin-left: 4%;
+  }
+  @media (max-width: 500px) {
+    .clickable-box .title{
+      font-size: 18px;
+    }
+  }
+}

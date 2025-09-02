@@ -80,7 +80,6 @@ main {
   .about-text {
     min-width: auto;
     max-width: 100%;
-    text-align: justify;
   }
   
   .about-text h1 {
@@ -149,3 +148,4 @@ main {
 
 
 }
+

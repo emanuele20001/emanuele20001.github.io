@@ -297,14 +297,7 @@ footer a:hover {
   width: 25px;
   height: 25px;
 }
-@media (max-width: 450px) {
-  .footer-text {
-    display: none; /* hide text when <= 450px */
-  }
-  .footer-left-icon {
-    display: block; /* show icon */
-  }
-}
+
 @media (max-width: 375px) {
   .navbar-left a:last-child {
     display: none;

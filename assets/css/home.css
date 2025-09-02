@@ -95,6 +95,7 @@ main {
 /* Mobile Responsive */
 @media (max-width: 900px) {
   .works2 {
+   font-size: 50px;
     margin-left: 6%;
     margin-bottom: 55px;
   }

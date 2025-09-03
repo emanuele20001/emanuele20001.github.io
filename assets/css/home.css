@@ -5,6 +5,7 @@
 main {
   display: flex;
   color: white;
+    height: 88vh;
   flex-direction: column;
   justify-content: center;
   padding: 0 15%;

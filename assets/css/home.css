@@ -7,7 +7,6 @@ main {
   color: white;
   flex-direction: column;
   justify-content: center;
-  height: 88vh;
   padding: 0 15%;
 }
 
